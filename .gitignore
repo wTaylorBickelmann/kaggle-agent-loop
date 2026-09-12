@@ -1,0 +1,26 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Competition data stays local
+data/
+*.csv
+!sample_submission.example.csv
+
+# Long experiment output — never commit, never feed to the planner
+logs/*
+!logs/.gitkeep
+ledger/runs/*.json
+!ledger/runs/.gitkeep
+
+# Optional local checkout of a competition repo
+competition/
+.DS_Store

@@ -1,0 +1,29 @@
+# Absolute rule: the planner prompt is assembled ONLY from these paths.
+# The orchestrator never opens logs/, ledger/runs/, or anything on deny.
+# Optional competition files are skipped when competition_root is unset.
+
+always:
+  - ledger/STRATEGIES.md
+  - ledger/RESULTS.md
+  - ledger/CURRENT_STRATEGY.md
+  - CURSOR.md
+
+# Resolved first against competition_root (if set), then loop root.
+# Add feature/model entrypoints from ev-purchase-kaggle or any Playground repo.
+optional:
+  - src/train.py
+  - src/features.py
+  - src/cv.py
+  - src/models.py
+  - train.py
+  - features.py
+
+deny:
+  - logs/
+  - ledger/runs/
+  - data/
+  - .env
+  - .git/
+
+max_bytes_per_file: 24000
+max_total_bytes: 80000
